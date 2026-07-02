@@ -1,0 +1,6 @@
+{
+  "name": "Nova Live Wallpaper",
+  "description": "Premium 3D Parallax Live Wallpaper Engine with Gyroscope and AI features.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
