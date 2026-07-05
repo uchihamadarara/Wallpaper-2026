@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.data.local.WallpaperEntity
 import kotlinx.coroutines.launch
 import java.util.UUID
@@ -21,7 +20,7 @@ import java.util.UUID
 @Composable
 fun AdminStudioScreen(
     onBackClick: () -> Unit,
-    viewModel: AdminStudioViewModel = viewModel()
+    viewModel: AdminStudioViewModel = org.koin.androidx.compose.koinViewModel()
 ) {
     var title by remember { mutableStateOf("") }
     var category by remember { mutableStateOf("Anime") }
