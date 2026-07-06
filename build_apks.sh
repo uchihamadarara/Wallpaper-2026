@@ -5,10 +5,10 @@ echo "Cleaning..."
 gradle clean
 
 echo "Building User App (com.nova.wallpaper)..."
-gradle assembleDebug
+gradle assembleRelease
 
 echo "Copying User APK..."
-cp app/build/outputs/apk/debug/app-debug.apk Nova_Wallpaper/Nova_Wallpaper.apk
+cp app/build/outputs/apk/release/app-release.apk Nova_Wallpaper/Nova_Wallpaper.apk
 
 echo "Setting up Admin App..."
 cp app/src/main/java/com/example/ui/NovaApp.kt /tmp/NovaApp.kt.backup
@@ -51,14 +51,17 @@ echo "Cleaning before Admin build..."
 gradle clean
 
 echo "Building Admin App (com.nova.admin)..."
-gradle assembleDebug
+gradle assembleRelease
 
 echo "Copying Admin APK..."
-cp app/build/outputs/apk/debug/app-debug.apk Nova_Admin/Nova_Admin.apk
+cp app/build/outputs/apk/release/app-release.apk Nova_Admin/Nova_Admin.apk
 
 echo "Restoring backups..."
 mv /tmp/NovaApp.kt.backup app/src/main/java/com/example/ui/NovaApp.kt
 mv /tmp/build.gradle.kts.backup app/build.gradle.kts
 mv /tmp/strings.xml.backup app/src/main/res/values/strings.xml
+
+echo "Zipping..."
+python3 -c "import zipfile; z = zipfile.ZipFile('Nova_Apps.zip', 'w', zipfile.ZIP_DEFLATED); z.write('Nova_Wallpaper/Nova_Wallpaper.apk', 'Nova_Wallpaper.apk'); z.write('Nova_Admin/Nova_Admin.apk', 'Nova_Admin.apk'); z.close()"
 
 echo "Done building both APKs!"
