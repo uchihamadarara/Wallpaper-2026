@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205305755692:android:20a6616ae36516dadcf989",
+        "android_client_info": {
+          "package_name": "com.nova.wallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205305755692-aslft9efd5vcbhhm2idnh9i2kbql09j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh16vRKKeB45NCEvvcFR3bjRuUYiksoko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205305755692-aslft9efd5vcbhhm2idnh9i2kbql09j2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
