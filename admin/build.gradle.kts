@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-  namespace = "com.example"
+  namespace = "com.nova.admin"
   compileSdk = 36
 
   defaultConfig {
-    applicationId = "com.nova.wallpaper"
+    applicationId = "com.nova.admin"
     minSdk = 24
     targetSdk = 35
     versionCode = 1

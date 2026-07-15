@@ -91,8 +91,7 @@ fun NovaApp() {
             composable(Screen.Explore.route) { 
                 ExploreScreen(onNavigateToDetail = { id -> navController.navigate("detail/$id") }) 
             }
-            composable(Screen.Profile.route) { SettingsScreen(onNavigateToAdmin = {  }) }
-            composable("admin_studio") { AdminStudioScreen(onBackClick = { navController.popBackStack() }, viewModel = org.koin.androidx.compose.koinViewModel()) }
+            composable(Screen.Profile.route) { SettingsScreen() }
         }
     }
 }

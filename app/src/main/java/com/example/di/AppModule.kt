@@ -47,5 +47,4 @@ val appModule = module {
     viewModel { HomeViewModel(get()) }
     viewModel { SettingsViewModel(get()) }
     viewModel { WallpaperDetailViewModel(get(), get()) }
-    viewModel { com.example.ui.AdminStudioViewModel(get()) }
 }

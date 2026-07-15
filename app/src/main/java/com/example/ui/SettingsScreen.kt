@@ -36,7 +36,7 @@ import com.google.android.gms.common.api.ApiException
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun SettingsScreen(viewModel: SettingsViewModel = koinViewModel(), onNavigateToAdmin: () -> Unit = {}) {
+fun SettingsScreen(viewModel: SettingsViewModel = koinViewModel()) {
     val scrollState = rememberScrollState()
     val context = LocalContext.current
     
@@ -206,22 +206,6 @@ fun SettingsScreen(viewModel: SettingsViewModel = koinViewModel(), onNavigateToA
                 SettingsSection("SUPPORT") {
                     SettingsArrowItem(Icons.Outlined.Shield, "Privacy Policy", "Read our privacy policy")
                     SettingsArrowItem(Icons.Outlined.Description, "Terms of Service", "Read our terms of service")
-                    
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onNavigateToAdmin() }
-                            .padding(horizontal = 16.dp, vertical = 12.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(imageVector = Icons.Outlined.Build, contentDescription = null, tint = Color.LightGray, modifier = Modifier.size(24.dp))
-                        Spacer(modifier = Modifier.width(16.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(text = "Admin Studio", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = Color.White)
-                            Text(text = "Upload custom package", fontSize = 12.sp, color = Color.Gray)
-                        }
-                        Icon(imageVector = Icons.Filled.ChevronRight, contentDescription = null, tint = Color.Gray, modifier = Modifier.size(20.dp))
-                    }
                 }
             }
             
